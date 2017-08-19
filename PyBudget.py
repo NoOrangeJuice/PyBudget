@@ -102,7 +102,7 @@ class Application():
         del self.expense_name[0:]
         del self.income_name[0:]
         del self.income_list[0:]
-        self.prompt()
+        self.prompt_income()
 
     def close_program(self):
         print('Exiting Program.')
