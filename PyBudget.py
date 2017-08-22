@@ -19,18 +19,18 @@ class Application:
         else:
             self.calculate()
 
-    def prompt(self, type):
-        """Asks for user input depending on the type (Income or Expense), until
+    def prompt(self, item_type):
+        """Asks for user input depending on the item_type (Income or Expense), until
         the user is done entering items."""
 
         while True:
-            value = int(input('Enter %s amount (numbers only): ' % type))
-            label = input('Enter %s name: ' % type)
+            value = int(input('Enter %s amount (numbers only): ' % item_type))
+            label = input('Enter %s name: ' % item_type)
             self.entries.append({
-                'value': value if type == 'income' else -value,
+                'value': value if item_type == 'income' else -value,
                 'label': label
             })
-            more = input('Enter %s? [y/n]: ' % type)
+            more = input('Enter %s? [y/n]: ' % item_type)
             if more == 'n':
                 break
         self.main()
@@ -61,7 +61,7 @@ class Application:
 
     def close_program(self):
         """Exits the program."""
-        
+
         print('\nExiting Program.')
         sys.exit(0)
 
